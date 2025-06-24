@@ -10,7 +10,7 @@ from keep_alive import keep_alive
 nest_asyncio.apply()
 
 # 🔐 Ключи
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = "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"
 TELEGRAM_TOKEN = "8003773351:AAHimIBFtARHS_1chitfqYfP397dhtWV85s"
 
 logging.basicConfig(level=logging.INFO)
@@ -19,6 +19,7 @@ logging.basicConfig(level=logging.INFO)
 def ask_openrouter(prompt):
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "HTTP-Referer": "https://github.com/Iskander58589/telegram-gpt-bot",  # обязательно!
         "Content-Type": "application/json"
     }
     data = {
