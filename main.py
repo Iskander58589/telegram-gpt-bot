@@ -11,8 +11,8 @@ from keep_alive import keep_alive
 nest_asyncio.apply()
 
 # 🔐 Ключи
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")  # Лучше брать из окружения
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+OPENROUTER_API_KEY = "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"
+TELEGRAM_TOKEN = "8003773351:AAHimIBFtARHS_1chitfqYfP397dhtWV85s"
 
 logging.basicConfig(level=logging.INFO)
 
