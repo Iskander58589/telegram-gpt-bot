@@ -3,7 +3,6 @@ import requests
 import asyncio
 import nest_asyncio
 import os
-import time
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, ContextTypes, filters
 from keep_alive import keep_alive
@@ -54,16 +53,7 @@ async def run_bot():
     print("✅ Бот запущен!")
     await app.run_polling()
 
-# 🔁 Цикл с перезапуском
-def main_loop():
-    keep_alive()
-    while True:
-        try:
-            asyncio.run(run_bot())
-        except Exception as e:
-            print(f"❌ Бот упал с ошибкой: {e}")
-            print("🔁 Перезапуск через 5 секунд...")
-            time.sleep(5)
-
+# 👇 Запуск
 if __name__ == "__main__":
-    main_loop()
+    keep_alive()
+    asyncio.run(run_bot())
